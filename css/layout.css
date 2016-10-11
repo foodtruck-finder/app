@@ -1,0 +1,20 @@
+/*header {
+  background: url("http://plannersweb.com/wp-content/uploads/2013/08/Reflections-Food-Panorama.jpg") no-repeat fixed center / cover;
+  text-align: center;
+  font-size: 1.50em;
+}
+
+/*header a:hover {
+  color: red;
+}*/
+
+.row{
+  text-align: center;
+  margin: 0 auto;
+}
+
+footer{
+  margin-top: 3em;
+  text-align: center;
+  font-size: .75em;
+}
