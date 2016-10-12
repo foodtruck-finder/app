@@ -78,13 +78,37 @@
     <hr>
     <!-- Find | Results Section
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <section class="findResults">
+    <section class="search">
       <div class="container">
           <div class="row">
               <div class="twelve columns" style="margin-top: 5%">
                   <h3>Find | Results</h3>
               </div>
           </div>
+
+          <div class="form-container">
+              <form>
+                <div class="row">
+                    <div class="twelve columns">
+                        <label><input type="checkbox" id="openNow" value="openNow"> Open now?</label>
+                        <ul id="filters">
+                        <li>
+                          <select id="distance-filter">
+                            <option value="">-- Filter by Distance --</option>
+                          </select>
+                        </li>
+                        <li>
+                          <select id="cuisine-filter">
+                            <option value="">-- Filter by Cuisine --</option>
+                          </select>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+            </form>
+
+          </div>
+
     </section>
     <hr>
     <!-- Top 20 Section
