@@ -1,7 +1,7 @@
-page('/');
+page('/', homeController.index);
 
-page('/search');
+page('/search', searchController.index);
 
-page('/top20');
+page('/top20', topController.index);
 
 page();
