@@ -1,46 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-  <!-- Basic Page Needs
+    <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Your page title here :)</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <title>Food Truck Finder</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <!-- Mobile Specific Metas
+    <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
+    <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
-  <!-- CSS
+    <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/module.css">
+    <link rel="stylesheet" href="css/base.css">
 
-  <!-- Favicon
+
+    <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
+
 <body>
-
-  <!-- Primary Page Layout
+    <!-- Header and Navigation
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page</h4>
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
-      </div>
-    </div>
-  </div>
+    <nav class="navbar container">
+        <div class="nav-container twelve columns">
+            <img class="logo four columns" src="images/logo.svg" alt="Main Logo" />
+            <ul class="navbar-list eight columns">
+                <li class="navbar-list-item"> <a class="navbar-list-link" href="#">Home</a> </li>
+                <li class="navbar-list-item"> <a class="navbar-list-link" href="#">Find|Results</a> </li>
+                <li class="navbar-list-item"> <a class="navbar-list-link" href="#">Top 20</a> </li>
+            </ul>
+        </div>
+    </nav>
+    <hr>
 
-<!-- End Document
+    <!-- Home Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section class="home">
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns" style="margin-top: 5%">
+                    <h3>Hi <span id="visitor">""</span>!</h3>
+                </div>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="row">
+                <div class="twelve columns" style="margin-top: 5%">
+                    <h4>Enter Your Location</h4>
+                    <form>
+                        <div class="row">
+                            <div class="twelve columns">
+                                <label for="location">Location:</label>
+                                <input type="location" placeholder="where are you?" id="location">
+                            </div>
+                        </div>
+                        <input class="button-primary" type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <!-- Find | Results Section
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section class="search">
+      <div class="container">
+          <div class="row">
+              <div class="twelve columns" style="margin-top: 5%">
+                  <h3>Find | Results</h3>
+              </div>
+          </div>
+
+          <div class="form-container">
+              <form>
+                <div class="row">
+                    <div class="twelve columns">
+                        <label><input type="checkbox" id="openNow" value="openNow"> Open now?</label>
+                        <ul id="filters">
+                        <li>
+                          <select id="distance-filter">
+                            <option value="">-- Filter by Distance --</option>
+                          </select>
+                        </li>
+                        <li>
+                          <select id="cuisine-filter">
+                            <option value="">-- Filter by Cuisine --</option>
+                          </select>
+                        </li>
+                      </ul>
+                    </div>
+                </div>
+            </form>
+
+          </div>
+
+    </section>
+    <hr>
+    <!-- Top 20 Section
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section class="top20">
+      <div class="container">
+          <div class="row">
+              <div class="twelve columns" style="margin-top: 5%">
+                  <h3>Top 20</h3>
+              </div>
+          </div>
+    </section>
+    <hr>
+    <footer>
+        <div class="footer-container twelve columns">
+            <p>Copyright 2016 | FoodTruck Finder Team</p>
+        </div>
+    </footer>
+    <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
+
 </html>
