@@ -1,7 +1,11 @@
 (function(module) {
 
-  var searchController = {};
+  var topController = {};
 
-  module.searchController = searchController;
+  topController.index = function() {
+    $('top20').show().siblings().hide();
+  };
+
+  module.topController = topController;
 
 })(window);
