@@ -1,7 +1,13 @@
 (function(module) {
 
-  var searchController = {};
+  var topController = {};
 
-  module.searchController = searchController;
+  topController.index = function() {
+    $('.top20').show();
+    $('.home').hide();
+    $('.search').hide();
+  };
+
+  module.topController = topController;
 
 })(window);
