@@ -22,7 +22,11 @@
 
   getYelp.terms = 'food+trucks';
 
-  getYelp.near = 'Portland,+OR';
+  getYelp.location = function() {
+    getYelp.locationSearchValue = $('#location').val();
+    return getYelp.locationSearchValue;
+  };
+  // getYelp.near = 'Portland,+OR';
 
   // getYelp.geolocation = function() {
   //   var options = {
@@ -48,28 +52,29 @@
   //   navigator.geolocation.getCurrentPosition(success, error, options);
   // };
 
-  getYelp.parameters = [];
+  getYelp.setParams = function() {
+    getYelp.location();
+    getYelp.parameters = [];
+    getYelp.parameters.push(['term', getYelp.terms]);
+    getYelp.parameters.push(['location', getYelp.locationSearchValue]);
+    getYelp.parameters.push(['callback', 'cb']);
+    getYelp.parameters.push(['oauth_consumer_key', getYelp.auth.consumerKey]);
+    getYelp.parameters.push(['oauth_consumer_secret', getYelp.auth.consumerSecret]);
+    getYelp.parameters.push(['oauth_token', getYelp.auth.accessToken]);
+    getYelp.parameters.push(['oauth_signature_method', 'HMAC-SHA1']);
+    getYelp.message = {
+      'action' : 'https://api.yelp.com/v2/search',
+      'method' : 'GET',
+      'parameters' : getYelp.parameters
+    };
 
-  getYelp.parameters.push(['term', getYelp.terms]);
-  getYelp.parameters.push(['location', getYelp.near]);
-  getYelp.parameters.push(['callback', 'cb']);
-  getYelp.parameters.push(['oauth_consumer_key', getYelp.auth.consumerKey]);
-  getYelp.parameters.push(['oauth_consumer_secret', getYelp.auth.consumerSecret]);
-  getYelp.parameters.push(['oauth_token', getYelp.auth.accessToken]);
-  getYelp.parameters.push(['oauth_signature_method', 'HMAC-SHA1']);
+    OAuth.setTimestampAndNonce(getYelp.message);
+    OAuth.SignatureMethod.sign(getYelp.message, getYelp.accessor);
 
-  getYelp.message = {
-    'action' : 'https://api.yelp.com/v2/search',
-    'method' : 'GET',
-    'parameters' : getYelp.parameters
+    getYelp.parameterMap = OAuth.getParameterMap(getYelp.message.parameters);
+    getYelp.parameterMap.oauth_signature = OAuth.percentEncode(getYelp.parameterMap.oauth_signature);
+    console.log(getYelp.parameterMap);
   };
-
-  OAuth.setTimestampAndNonce(getYelp.message);
-  OAuth.SignatureMethod.sign(getYelp.message, getYelp.accessor);
-
-  getYelp.parameterMap = OAuth.getParameterMap(getYelp.message.parameters);
-  getYelp.parameterMap.oauth_signature = OAuth.percentEncode(getYelp.parameterMap.oauth_signature);
-  console.log(getYelp.parameterMap);
 
   getYelp.foodTrucksArray = [];
 
