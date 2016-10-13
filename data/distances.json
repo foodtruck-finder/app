@@ -1,0 +1,18 @@
+{"distances": [
+  {
+    "id": "0",
+    "dist": "Walking (1 mi.)"
+  },
+  {
+    "id": "1",
+    "dist": "Within 4 blocks"
+  },
+  {
+    "id": "2",
+    "dist": "Biking (2 mi.)"
+  },
+  {
+    "id": "3",
+    "dist": "Driving (5 mi.)"
+  }
+]}
