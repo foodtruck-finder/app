@@ -2,3 +2,26 @@
   display: block;
 
 }
+
+.form-container{
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.divisor{
+  margin: 0;
+  background-color: red;
+}
+
+#distance-filter{
+  color: #fff;
+  background-color: #000;
+  /*clear: top;*/
+}
+
+#cuisine-filter{
+  color: #fff;
+  background-color: #000;
+  /*clear: top;*/
+}
