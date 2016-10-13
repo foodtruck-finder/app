@@ -31,6 +31,22 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="images/favicon.png">
 
+    <!-- Handlebars template for search results
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <script id="searchResults-template" type="text/x-handlebars-template">
+      <li>
+        <h3>
+        <a  href="{{html_url}}" target="_blank">{{name}}</a>
+        </h3>
+        <p>Description: {{businesses.1.id}}</p>
+        <!-- <p>Stargazers count: {{stargazers_count}}</p>
+        <p>Language: {{language}}</p>
+        <p>Created: {{created_at}}</p>
+        <p>Last updated: {{fupdated_at}}</p> -->
+      </li>
+    </script>
+
 </head>
 
 <body>
@@ -91,8 +107,16 @@
               <div class="twelve columns">
                   <h3 class="section-heading">Find | Results</h3>
                   <p class="section-description">Your filtered search results will populate below.</p>
+                  <!-- "My favorite GitHub repos" content, which is added to the document via Handlebars template -->
+                  <section id="search-results-container">
+                    <ul id="search-results-list">
+                    </ul>
+                  </section>
               </div>
           </div>
+      </div>
+    </section>
+
 
     <!-- Form 2
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -151,12 +175,13 @@
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap"></script> --> -->
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap"></script> -->
   <script type ="text/javascript" src="scripts/mapCreator.js"></script>
   <script async defer  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap"></script>
 
   <script type ="text/javascript" src="vendor/jquery-3.1.1.js"></script>
   <script type ="text/javascript" src="vendor/page.js"></script>
+  <script type ="text/javascript" src="vendor/handlebars-v4.0.5.js"></script>
 
   <script type ="text/javascript" src="scripts/oauth.js"></script>
   <script type ="text/javascript" src="scripts/sha1.js"></script>
