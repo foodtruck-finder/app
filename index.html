@@ -34,16 +34,16 @@
 </head>
 
 <body>
-  
+
     <!-- Header and Navigation
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <nav class="navbar container">
         <div class="nav-container twelve columns">
             <img class="logo four columns" src="images/logo.svg" alt="Main Logo" />
             <ul class="navbar-list eight columns">
-                <li class="navbar-list-item"> <a class="navbar-list-link" href="#">Home</a> </li>
-                <li class="navbar-list-item"> <a class="navbar-list-link" href="#">Find|Results</a> </li>
-                <li class="navbar-list-item"> <a class="navbar-list-link" href="#">Top 20</a> </li>
+                <li class="navbar-list-item"> <a class="navbar-list-link" href="/">Home</a> </li>
+                <li class="navbar-list-item"> <a class="navbar-list-link" href="/search">Find|Results</a> </li>
+                <li class="navbar-list-item"> <a class="navbar-list-link" href="/top20">Top 20</a> </li>
             </ul>
         </div>
     </nav>
@@ -68,8 +68,15 @@
                                 <input type="location" placeholder="where are you?" id="location">
                             </div>
                         </div>
-                        <input class="button-primary" type="submit" value="Submit">
+                        <input id ="location-submit" class="button-primary" type="submit" value="Submit">
                     </form>
+
+                    <div id="map">
+                    </div>
+
+                </div><!--End Wrapper-->
+
+
                 </div>
             </div>
         </div>
@@ -140,8 +147,29 @@
         </div>
     </footer>
 
-    <!-- End Document
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- End Document -->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap"></script> --> -->
+  <script type ="text/javascript" src="scripts/mapCreator.js"></script>
+  <script async defer  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap"></script>
+
+  <script type ="text/javascript" src="vendor/jquery-3.1.1.js"></script>
+  <script type ="text/javascript" src="vendor/page.js"></script>
+
+  <script type ="text/javascript" src="scripts/oauth.js"></script>
+  <script type ="text/javascript" src="scripts/sha1.js"></script>
+  <script type ="text/javascript" src="scripts/yelpAPI.js"></script>
+
+  <script type ="text/javascript" src="scripts/homeController.js"></script>
+  <script type ="text/javascript" src="scripts/searchController.js"></script>
+  <script type ="text/javascript" src="scripts/topController.js"></script>
+  <script type ="text/javascript" src="scripts/homeView.js"></script>
+  <script type ="text/javascript" src="scripts/searchView.js"></script>
+  <script type ="text/javascript" src="scripts/topView.js"></script>
+  <script type ="text/javascript" src="scripts/routes.js"></script>
+
 </body>
 
 </html>

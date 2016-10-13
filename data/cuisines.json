@@ -1,0 +1,54 @@
+{"cuisines": [
+  {
+    "id": "0",
+    "cuis": "-no preference-"
+  },
+  {
+    "id": "1",
+    "cuis": "Barbeque"
+  },
+  {
+    "id": "2",
+    "cuis": "Burgers"
+  },
+  {
+    "id": "3",
+    "cuis": "Chinese"
+  },
+  {
+    "id": "4",
+    "cuis": "Coffee & Tea"
+  },
+  {
+    "id": "5",
+    "cuis": "Italian"
+  },
+  {
+    "id": "6",
+    "cuis": "Japanese"
+  },
+  {
+    "id": "7",
+    "cuis": "Mexican"
+  },
+  {
+    "id": "8",
+    "cuis": "Pizza"
+  },
+  {
+    "id": "9",
+    "cuis": "Sandwiches"
+  },
+  {
+    "id": "10",
+    "cuis": "Seafood"
+  },
+  {
+    "id": "11",
+    "cuis": "Thai"
+  },
+  {
+    "id": "12 ",
+    "cuis": "Vietnamese"
+  }
+]}

@@ -3,7 +3,10 @@
   var searchController = {};
 
   searchController.index = function() {
-    $('#search').show().siblings().hide();
+    $('.search').show();
+    $('.home').hide();
+    $('.top20').hide();
+    searchView.populateFilters();
   };
 
   module.searchController = searchController;

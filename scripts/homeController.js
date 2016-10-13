@@ -3,8 +3,13 @@
   var homeController = {};
 
   homeController.index = function() {
-    $('home').show().siblings().hide();
+    $('.home').show();
+    $('.search').hide();
+    $('.top20').hide();
+    homeView.formClick();
   };
+
+
 
   module.homeController = homeController;
 

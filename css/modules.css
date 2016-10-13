@@ -25,3 +25,18 @@
   background-color: #000;
   /*clear: top;*/
 }
+#map {
+    position:relative;
+    text-align: center;
+    color: #363535;
+    text-transform: uppercase;
+    width: 425px;
+    height: 350px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 5px;
+    border: 1px solid black;
+    background: #474747;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .3);
+
+}
