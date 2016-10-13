@@ -2,3 +2,38 @@
   display: block;
 
 }
+
+#map {
+    position:relative;
+    text-align: center;
+    color: #363535;
+    text-transform: uppercase;
+    width: 425px;
+    height: 350px;
+    margin:0 auto;
+    margin-top:20px;
+    padding: 5px;
+    border: 1px solid black;
+    background: #474747;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .3);
+}
+
+#map .helper {
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    color: rgb(54, 54, 54);
+    width: 180px;
+    line-height: 135%;
+    margin: 0 auto;
+    margin-top: 140px;
+}
+
+#results {
+    color: rgb(0, 180, 149);
+    position: absolute;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 23px;
+    width: 100%;
+}
