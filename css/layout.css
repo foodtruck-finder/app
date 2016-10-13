@@ -1,20 +1,39 @@
-/*header {
-  background: url("http://plannersweb.com/wp-content/uploads/2013/08/Reflections-Food-Panorama.jpg") no-repeat fixed center / cover;
+/* Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.section {
+  padding: 8rem 0 7rem;
   text-align: center;
-  font-size: 1.50em;
+}
+.section-heading,
+.section-description {
+  margin-bottom: 1rem;
 }
 
-/*header a:hover {
-  color: red;
-}*/
+
+.home{
+  background-image: url('../images/pattern.jpg');
+  background-size: cover;
+  color: #000;
+}
+
+.search{
+background-color: #000;
+color: #fff;
+}
+
+.top20{
+
+}
 
 .row{
   text-align: center;
   margin: 0 auto;
 }
 
+/* Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 footer{
-  margin-top: 3em;
+  margin-top: 1rem;
   text-align: center;
   font-size: .75em;
 }
