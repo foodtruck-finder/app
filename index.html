@@ -4,22 +4,22 @@
 <head>
 
     <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
     <title>Food Truck Finder</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href="http://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
     <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -28,14 +28,15 @@
 
 
     <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
 
 <body>
+
     <!-- Header and Navigation
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <nav class="navbar container">
         <div class="nav-container twelve columns">
             <img class="logo four columns" src="images/logo.svg" alt="Main Logo" />
@@ -46,26 +47,24 @@
             </ul>
         </div>
     </nav>
-    <hr>
+    <hr class="divisor">
 
     <!-- Home Section
-–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <section class="home">
-        <div class="container">
-            <div class="row">
-                <div class="twelve columns" style="margin-top: 5%">
-                    <h3>Hi <span id="visitor">""</span>!</h3>
-                </div>
-            </div>
-        </div>
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section class="section home">
         <div class="form-container">
             <div class="row">
-                <div class="twelve columns" style="margin-top: 5%">
-                    <h4>Enter Your Location</h4>
+                <div class="twelve columns">
+                  <!-- <div class="truck-image">
+                      <img class="u-max-full-width" id="truck-image" src="images/placeholder.png">
+                  </div> -->
+                    <h3 class="section-heading">Enter Your Location</h3>
+    <!-- Form 2
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
                     <form>
                         <div class="row">
                             <div class="twelve columns">
-                                <label for="location">Location:</label>
+                                <label for="location"></label>
                                 <input type="location" placeholder="where are you?" id="location">
                             </div>
                         </div>
@@ -82,61 +81,77 @@
             </div>
         </div>
     </section>
-    <hr>
+    <hr class="divisor">
+
     <!-- Find | Results Section
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <section class="search">
+    <section class="section search">
       <div class="container">
           <div class="row">
-              <div class="twelve columns" style="margin-top: 5%">
-                  <h3>Find | Results</h3>
+              <div class="twelve columns">
+                  <h3 class="section-heading">Find | Results</h3>
+                  <p class="section-description">Your filtered search results will populate below.</p>
               </div>
           </div>
 
+    <!-- Form 2
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
           <div class="form-container">
               <form>
                 <div class="row">
-                    <div class="twelve columns">
+                    <!-- <div class="twelve columns"> -->
                         <label><input type="checkbox" id="openNow" value="openNow"> Open now?</label>
                         <ul id="filters">
-                        <li>
-                          <select id="distance-filter">
-                          </select>
-                        </li>
-                        <li>
-                          <select id="cuisine-filter">
-                          </select>
-                        </li>
+                          <div class="one-half column category">
+                            <img class="u-max-full-width" src="images/distance-icon.svg">
+                              <li>
+                                <select id="distance-filter">
+                                  <option value="">-- Filter by Distance --</option>
+                                </select>
+                              </li>
+                          </div>
+                        <div class="one-half column category">
+                          <img class="u-max-full-width" src="images/cuisine-icon.svg">
+                            <li>
+                              <select id="cuisine-filter">
+                                <option value="">-- Filter by Cuisine --</option>
+                              </select>
+                            </li>
+                        </div>
                       </ul>
-                    </div>
+                    <!-- </div> -->
                 </div>
             </form>
 
           </div>
 
     </section>
-    <hr>
+    <hr class="divisor">
+
     <!-- Top 20 Section
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <section class="top20">
+    <section class="section top20">
       <div class="container">
           <div class="row">
-              <div class="twelve columns" style="margin-top: 5%">
-                  <h3>Top 20</h3>
+              <div class="twelve columns">
+                  <h3 class="section-heading">Top 20</h3>
+                  <p class="section-description">Below you can find the Top 20 results in your area.</p>
               </div>
           </div>
     </section>
-    <hr>
+    <hr class="divisor">
+
     <footer>
         <div class="footer-container twelve columns">
             <p>Copyright 2016 | FoodTruck Finder Team</p>
         </div>
     </footer>
-    <!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <!-- End Document -->
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap"></script> -->
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap"></script> --> -->
   <script type ="text/javascript" src="scripts/mapCreator.js"></script>
   <script async defer  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap"></script>
 
@@ -154,7 +169,6 @@
   <script type ="text/javascript" src="scripts/searchView.js"></script>
   <script type ="text/javascript" src="scripts/topView.js"></script>
   <script type ="text/javascript" src="scripts/routes.js"></script>
-
 
 </body>
 
