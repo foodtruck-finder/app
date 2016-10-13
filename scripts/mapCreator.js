@@ -4,9 +4,6 @@
 // locate you.
 
 
-// async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap"
-
-
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     // center: {lat: 45.516, lng: -122.676},
@@ -22,7 +19,8 @@ function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-
+				console.log(pos.lat);
+				console.log(pos.lng);
       infoWindow.setPosition(pos);
       infoWindow.setContent('You are here.');
       map.setCenter(pos);
@@ -43,9 +41,3 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
 
 initMap();
-
-async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap"
-
-    // <script async defer
-    // src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap">
-    // </script>
