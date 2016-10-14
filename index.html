@@ -31,6 +31,27 @@
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <link rel="icon" type="image/png" href="images/favicon.png">
 
+    <!-- Handlebars template for search results
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <script id="searchResults-template" type="text/x-handlebars-template">
+      <li>
+        <a target="_blank" href="{{businesses.0.url}}">{{businesses.0.name}}</a>
+      </li>
+      <li>
+        <a target="_blank" href="{{businesses.1.url}}">{{businesses.1.name}}</a>
+      </li>
+      <li>
+        <a target="_blank" href="{{businesses.2.url}}">{{businesses.2.name}}</a>
+      </li>
+      <li>
+        <a target="_blank" href="{{businesses.3.url}}">{{businesses.3.name}}</a>
+      </li>
+      <li>
+        <a target="_blank" href="{{businesses.4.url}}">{{businesses.4.name}}</a>
+      </li>
+    </script>
+
 </head>
 
 <body>
@@ -109,6 +130,14 @@
                 </form>
 
             </div>
+
+          <!-- Search results populated by template
+          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+          <section id="search-results-container">
+            <ul id="search-results-list">
+            </ul>
+          </section>
+
 
     </section>
     <hr class="divisor">

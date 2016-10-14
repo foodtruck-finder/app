@@ -48,6 +48,9 @@
     });
   };
 
+
+
+
   module.searchView = searchView;
 
 })(window);
