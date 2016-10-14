@@ -44,6 +44,15 @@
 }
 
 #search-results-list li {
-  display: block;
-  padding-left: 3em;
+  margin: 2em;
+}
+
+#search-results-list a {
+  font-size: 1.25em;
+  font-weight: 900;
+}
+
+#search-results-list img {
+  border-radius: .5em;
+  font-weight: 900;
 }
