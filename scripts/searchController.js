@@ -7,6 +7,7 @@
     $('.home').hide();
     $('.top20').hide();
     searchView.populateFilters();
+    searchView.handleFilters();
   };
 
   module.searchController = searchController;
