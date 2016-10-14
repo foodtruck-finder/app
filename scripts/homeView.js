@@ -9,6 +9,7 @@
       getYelp.defaultAjaxCall();
       console.log('AJAX call to YelpAPI completed');
       $('#location').val('');
+      getYelp.index();
       searchController.index();
     });
   };

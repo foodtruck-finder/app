@@ -36,14 +36,19 @@
 
     <script id="searchResults-template" type="text/x-handlebars-template">
       <li>
-        <h3>
-        <a  href="{{html_url}}" target="_blank">{{name}}</a>
-        </h3>
-        <p>Description: {{businesses.1.id}}</p>
-        <!-- <p>Stargazers count: {{stargazers_count}}</p>
-        <p>Language: {{language}}</p>
-        <p>Created: {{created_at}}</p>
-        <p>Last updated: {{fupdated_at}}</p> -->
+        <a target="_blank" href="{{businesses.0.url}}">{{businesses.0.name}}</a>
+      </li>
+      <li>
+        <a target="_blank" href="{{businesses.1.url}}">{{businesses.1.name}}</a>
+      </li>
+      <li>
+        <a target="_blank" href="{{businesses.2.url}}">{{businesses.2.name}}</a>
+      </li>
+      <li>
+        <a target="_blank" href="{{businesses.3.url}}">{{businesses.3.name}}</a>
+      </li>
+      <li>
+        <a target="_blank" href="{{businesses.4.url}}">{{businesses.4.name}}</a>
       </li>
     </script>
 
@@ -107,11 +112,6 @@
               <div class="twelve columns">
                   <h3 class="section-heading">Find | Results</h3>
                   <p class="section-description">Your filtered search results will populate below.</p>
-                  <!-- "My favorite GitHub repos" content, which is added to the document via Handlebars template -->
-                  <section id="search-results-container">
-                    <ul id="search-results-list">
-                    </ul>
-                  </section>
               </div>
           </div>
       </div>
@@ -148,6 +148,14 @@
             </form>
 
           </div>
+
+          <!-- Search results populated by template
+          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+          <section id="search-results-container">
+            <ul id="search-results-list">
+            </ul>
+          </section>
+
 
     </section>
     <hr class="divisor">

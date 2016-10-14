@@ -89,14 +89,15 @@
       'jsonpCallback' : 'cb',
       'success' : function(data, textStats, XMLHttpRequest) {
         getYelp.foodTrucks = [data];
-        console.log([data]);
+        console.log(getYelp.foodTrucks);
+        localStorage.setItem('cachedSearch', JSON.stringify(data));
       }
     });
   };
 
   getYelp.searchResultsQuery = function() {
-    var $searchResults = $('#search-results-container');
-    $searchResults.find('ul').empty();
+    var $searchResults = $('#search-results-list');
+    $searchResults.empty();
   };
 
   getYelp.render = function(searchResults) {
@@ -105,9 +106,13 @@
   };
 
   getYelp.index = function() {
+    var localStorageData = localStorage.getItem('cachedSearch');
+    var localStorageDataJSON = JSON.parse(localStorageData);
+    var yelpSearchResults = [];
+    yelpSearchResults.push(localStorageDataJSON);
     getYelp.searchResultsQuery();
     $('#search-results-container ul').append(
-      getYelp.foodTrucks.map(getYelp.render)
+      yelpSearchResults.map(getYelp.render)
     );
   };
 
