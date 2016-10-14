@@ -176,7 +176,7 @@ body {
     /* currently ems cause chrome bug misinterpreting rems on body element */
     line-height: 1.6;
     font-weight: 400;
-    font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #222;
 }
 
@@ -187,7 +187,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: 2rem;
-    font-weight: 300;
+    /*font-weight: 300;*/
+    font-family: 'Bungee Inline', cursive;
+
 }
 
 h1 {
@@ -259,11 +261,12 @@ p {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 a {
-    color: #1EAEDB;
+    color: #00628B;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #0FA0CE;
+    color: #81A594;
 }
 
 
@@ -298,8 +301,8 @@ a:hover {
 
 .button.button-primary, button.button-primary, input[type="submit"].button-primary, input[type="reset"].button-primary, input[type="button"].button-primary {
     color: #FFF;
-    background-color: #33C3F0;
-    border-color: #33C3F0;
+    background-color: #00628B;
+    border-color: #00628B;
 }
 
 .button.button-primary:hover, button.button-primary:hover, input[type="submit"].button-primary:hover, input[type="reset"].button-primary:hover, input[type="button"].button-primary:hover, .button.button-primary:focus, button.button-primary:focus, input[type="submit"].button-primary:focus, input[type="reset"].button-primary:focus, input[type="button"].button-primary:focus {
