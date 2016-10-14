@@ -1,6 +1,5 @@
 .navbar .container{
   display: block;
-
 }
 
 .form-container{
@@ -9,36 +8,39 @@
   width: 100%;
 }
 
+#location-input{
+  /*border-radius: .25em;*/
+  border: 1px solid #00628B;
+  background-color: #E6E6DC;
+}
 .divisor{
   margin: 0;
-  background-color: red;
+  background-color: #00628B;
 }
 
 #distance-filter{
   color: #fff;
-  background-color: #000;
-  /*clear: top;*/
+  background-color: #00628B;
+  border: none;
 }
 
 #cuisine-filter{
   color: #fff;
-  background-color: #000;
-  /*clear: top;*/
+  background-color: #00628B;
+  border: none;
 }
+
 #map {
     position:relative;
     text-align: center;
-    color: #363535;
+    color: #00628B;
+    height: 0;
+    overflow: hidden;
     text-transform: uppercase;
-    width: 425px;
-    height: 350px;
+    max-width: 70%;
+    min-height: 350px;
     margin: 0 auto;
-    margin-top: 20px;
-    padding: 5px;
-    border: 1px solid black;
-    background: #474747;
-    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, .3);
-
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .4);
 }
 
 #search-results-list li {

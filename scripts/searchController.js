@@ -7,7 +7,8 @@
     $('.home').hide();
     $('.top20').hide();
     searchView.populateFilters();
-    getYelp.index();
+    searchView.handleFilters();
+
   };
 
   module.searchController = searchController;
