@@ -11,18 +11,19 @@
 
 
 .home{
-  background-image: url('../images/pattern.jpg');
+  background-image: url('../images/foodcarts.jpg');
+  background-color: #E6E6DC;
   background-size: cover;
   color: #000;
 }
 
 .search{
-background-color: #000;
-color: #fff;
+  background-color: #E6E6DC;
+  color: #00628B;
 }
 
 .top20{
-
+  background-color: #E6E6DC;
 }
 
 .row{
@@ -33,7 +34,7 @@ color: #fff;
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 footer{
-  margin-top: 1rem;
+  margin-top: 2rem;
   text-align: center;
   font-size: .75em;
 }
