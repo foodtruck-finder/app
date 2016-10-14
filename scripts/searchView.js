@@ -6,27 +6,31 @@
 
   searchView.populateFilters = function() {
 
-    $.ajax({
-      url: 'data/cuisines.json',
-      dataType:'JSON',
-      success:function(data){
-        $selectC.html('');
-        $.each(data.cuisines, function(key, val){
-          $selectC.append('<option id="' + val.id + '">' + val.cuis + '</option>');
-        });
-      }
-    });
+    if ($('#cuisine-filter option').length < 2) { //only run once
 
-    $.ajax({
-      url: 'data/distances.json',
-      dataType:'JSON',
-      success:function(data){
-        $selectD.html('');
-        $.each(data.distances, function(key, val){
-          $selectD.append('<option id="' + val.id + '">' + val.dist + '</option>');
-        });
-      }
-    });
+      $.ajax({
+        url: 'data/cuisines.json',
+        dataType:'JSON',
+        success:function(data){
+          $selectC.html('');
+          $.each(data.cuisines, function(key, val){
+            $selectC.append('<option id="' + val.id + '">' + val.cuis + '</option>');
+          });
+        }
+      });
+
+      $.ajax({
+        url: 'data/distances.json',
+        dataType:'JSON',
+        success:function(data){
+          $selectD.html('');
+          $.each(data.distances, function(key, val){
+            $selectD.append('<option id="' + val.id + '">' + val.dist + '</option>');
+          });
+        }
+      });
+
+    };
 
   };
 
@@ -47,9 +51,6 @@
       console.log('Open Now option is now OFF');
     });
   };
-
-
-
 
   module.searchView = searchView;
 
