@@ -46,40 +46,23 @@
                 <li class="navbar-list-item"> <a class="navbar-list-link" href="/top20">Top 20</a> </li>
             </ul>
         </div>
+        <form>
+            <div class="form-container">
+              <div class="row">
+                <div class="twelve columns">
+                    <label for="location">Your location is: </label>
+                    <input type="location" placeholder="where are you?" id="location">
+                </div>
+            </div>
+        </form>
     </nav>
     <hr class="divisor">
 
     <!-- Home Section
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <section class="section home">
-        <div class="form-container">
-            <div class="row">
-                <div class="twelve columns">
-                  <!-- <div class="truck-image">
-                      <img class="u-max-full-width" id="truck-image" src="images/placeholder.png">
-                  </div> -->
-                    <h3 class="section-heading">Enter Your Location</h3>
-    <!-- Form 2
-    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-                    <form>
-                        <div class="row">
-                            <div class="twelve columns">
-                                <label for="location"></label>
-                                <input type="location" placeholder="where are you?" id="location">
-                            </div>
-                        </div>
-                        <input id ="location-submit" class="button-primary" type="submit" value="Submit">
-                    </form>
-
-                    <div id="map">
-                    </div>
-
-                </div><!--End Wrapper-->
-
-
-                </div>
-            </div>
-        </div>
+      <div id="map">
+      </div>
     </section>
     <hr class="divisor">
 
@@ -138,6 +121,15 @@
                   <p class="section-description">Below you can find the Top 20 results in your area.</p>
               </div>
           </div>
+
+          <script id="top-20-template" type="text/x-handlebars-template">
+            <li>
+              <a href="{{yelp_url}}" target="_blank"><h3>{{foodTruckName}}</h3></a>
+              <p>Location: {{  }}</p>
+              <p>Cuisine: {{  }}</p>
+
+            </li>
+          </script>
     </section>
     <hr class="divisor">
 
@@ -153,12 +145,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap"></script> --> -->
   <script type ="text/javascript" src="scripts/mapCreator.js"></script>
-  <script type ="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.amd.min.js"></script>
   <script async defer  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap"></script>
 
   <script type ="text/javascript" src="vendor/jquery-3.1.1.js"></script>
   <script type ="text/javascript" src="vendor/page.js"></script>
-  <script type ="text/javascript" src="vendor/handlebars-v4.0.5.js"></script>
 
   <script type ="text/javascript" src="scripts/oauth.js"></script>
   <script type ="text/javascript" src="scripts/sha1.js"></script>
