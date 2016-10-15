@@ -37,7 +37,8 @@
     <script id="searchResults-template" type="text/x-handlebars-template">
       <li>
         <a target="_blank" href="{{url}}">{{name}}</a>
-        <p>Rating: {{rating}} stars. {{review_count}} reviews.</p>
+        <p>Rating: {{rating}} stars. {{review_count}} reviews.<br>
+        {{location.address}}</p>
         <img src="{{image_url}}">
       </li>
     </script>
