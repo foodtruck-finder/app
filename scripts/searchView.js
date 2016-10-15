@@ -52,6 +52,18 @@
     });
   };
 
+  searchView.formClick = function() {
+    $('#location-submit-btn').on('click', function(e){
+      e.preventDefault();
+      getYelp.setParams();
+      getYelp.defaultAjaxCall().then(function() {
+        console.log('AJAX call to YelpAPI completed');
+        getYelp.index();
+      });
+    });
+  };
+
+
   module.searchView = searchView;
 
 })(window);
