@@ -4,8 +4,6 @@
   margin-top: 2.5em;
   width: 5em;
   height: 5em;
-  /*opacity: 0.80;
-  filter: alpha(opacity=80); /* For IE8 and earlier */*/
 }
 
 .navbar-list{
@@ -13,13 +11,11 @@
   margin: 0 auto;
   text-align: center;
   list-style: none;
-  font-size: 1.2em;
-  /*font-style: bold;*/
+  font-size: 1em;
 }
 .navbar-list, ul, li{
   display: inline-block;
   padding-left: .5em;
   vertical-align: middle;
-  /*text-align: right;*/
   margin-top: 1em;
 }

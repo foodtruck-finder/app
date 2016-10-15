@@ -69,3 +69,17 @@
     border-radius: .5em;
     font-weight: 900;
 }
+
+#top-twenty-list li {
+    margin: 2em;
+}
+
+#top-twenty-list a {
+    font-size: 1.25em;
+    font-weight: 900;
+}
+
+#top-twenty-list img {
+    border-radius: .5em;
+    font-weight: 900;
+}
