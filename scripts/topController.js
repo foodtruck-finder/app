@@ -3,9 +3,9 @@
   var topController = {};
 
   topController.index = function() {
-    $('.top20').show();
     $('.home').hide();
     $('.search').hide();
+    $('.top20').delay(100).hide().slideDown(300);
   };
   module.topController = topController;
 
