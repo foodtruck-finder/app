@@ -56,7 +56,8 @@
     getYelp.location();
     getYelp.parameters = [];
     getYelp.parameters.push(['term', getYelp.terms]);
-    getYelp.parameters.push(['location', getYelp.locationSearchValue]);
+      getYelp.parameters.push(['location', getYelp.locationSearchValue]);
+      // getYelp.parameters.push(['location', pos.lat, pos.lng]);
     getYelp.parameters.push(['callback', 'cb']);
     getYelp.parameters.push(['oauth_consumer_key', getYelp.auth.consumerKey]);
     getYelp.parameters.push(['oauth_consumer_secret', getYelp.auth.consumerSecret]);
