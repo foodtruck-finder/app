@@ -76,7 +76,9 @@
     console.log(getYelp.parameterMap);
   };
 
-  getYelp.foodTrucksArray = [];
+  // getYelp.foodTrucks = [];
+
+  // getYelp.foodTrucks.businesses = [];
 
   getYelp.defaultAjaxCall = function() {
     $.ajax({
@@ -86,11 +88,35 @@
       'dataType' : 'jsonp',
       'jsonpCallback' : 'cb',
       'success' : function(data, textStats, XMLHttpRequest) {
-        getYelp.foodTrucksArray = data;
-        console.log(data);
+        getYelp.foodTrucks = [data];
+        console.log(getYelp.foodTrucks);
+        localStorage.setItem('cachedSearch', JSON.stringify(data));
       }
     });
   };
+
+  getYelp.searchResultsQuery = function() {
+    var $searchResults = $('#search-results-list');
+    $searchResults.empty();
+  };
+
+  getYelp.render = function(searchResults) {
+    var template = Handlebars.compile($('#searchResults-template').text());
+    return template(searchResults);
+  };
+
+  getYelp.index = function() {
+    var localStorageData = localStorage.getItem('cachedSearch');
+    var localStorageDataJSON = JSON.parse(localStorageData);
+    var yelpSearchResults = [];
+    yelpSearchResults.push(localStorageDataJSON);
+    getYelp.searchResultsQuery();
+    $('#search-results-container ul').append(
+      yelpSearchResults.map(getYelp.render)
+    );
+  };
+
+
 
   module.getYelp = getYelp;
 
