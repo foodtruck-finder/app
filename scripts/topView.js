@@ -10,6 +10,12 @@
     });
   };
 
+  // Render top20 template
+  var render = function(top20) {
+    var template = Handlebars.compile($('#top-20-template').text());
+    return template(top20);
+  };
+
   module.topView = topView;
 
 })(window);
