@@ -3,6 +3,7 @@
 // failed.", it means you probably did not give permission for the browser to
 // locate you.
 
+var pos;  // Initialize pos variable for external access
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -15,7 +16,7 @@ function initMap() {
   // Try HTML5 geolocation.
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
+      pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
