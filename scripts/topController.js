@@ -7,7 +7,6 @@
     $('.home').hide();
     $('.search').hide();
   };
-
   module.topController = topController;
 
 })(window);
