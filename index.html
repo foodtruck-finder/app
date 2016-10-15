@@ -77,6 +77,20 @@
       </li>
     </script>
 
+
+    <!-- Handlebars template for top20 results
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script id="top-20-template" type="text/x-handlebars-template">
+        <li>
+            <a href="{{businesses_url}}" target="_blank"><h3>{{businessesName}}</h3></a>
+            <img src="{{businesses.img}}">
+            <p>Rating: {{ }} stars</p>
+            <p>Location: {{ }}</p>
+            <p>Cuisine: {{ }}</p>
+
+        </li>
+    </script>
+
 </head>
 
 <body>
@@ -174,20 +188,14 @@
             <div class="row">
                 <div class="twelve columns">
                     <h3 class="section-heading">Top 20</h3>
-                    <p class="section-description">Below you can find the Top 20 results in your area.</p>
+                    <p class="section-description">Top 20 results in your area</p>
                 </div>
             </div>
 
             <label><input type="checkbox" id="openNowTop20" value="openNow"> Open now?</label>
 
-            <script id="top-20-template" type="text/x-handlebars-template">
-                <li>
-                    <a href="{{yelp_url}}" target="_blank"><h3>{{foodTruckName}}</h3></a>
-                    <p>Location: {{ }}</p>
-                    <p>Cuisine: {{ }}</p>
 
-                </li>
-            </script>
+          </div>
     </section>
     <hr class="divisor">
 
