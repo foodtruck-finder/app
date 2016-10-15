@@ -3,7 +3,7 @@
   var homeView = {};
 
   homeView.formClick = function() {
-    $('#location-submit').on('click', function(e){
+    $('#location-submit-btn').on('click', function(e){
       e.preventDefault();
       getYelp.setParams();
       getYelp.defaultAjaxCall();
