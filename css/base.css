@@ -1,7 +1,7 @@
 /* HEADER & NAV STYLES
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .logo{
-  margin: 0 auto;
+  margin-top: 2.5em;
   width: 5em;
   height: 5em;
   /*opacity: 0.80;
@@ -14,12 +14,12 @@
   text-align: center;
   list-style: none;
   font-size: 1.2em;
-  padding: .25em;
+  /*font-style: bold;*/
 }
 .navbar-list, ul, li{
   display: inline-block;
-  padding-left: .25em;
-  padding-right: .25em;
+  padding-left: .5em;
   vertical-align: middle;
-  margin-top: .5em;
+  /*text-align: right;*/
+  margin-top: 1em;
 }

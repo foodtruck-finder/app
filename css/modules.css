@@ -5,12 +5,19 @@
 .form-container{
   text-align: center;
   margin: 0 auto;
+  margin-top: 1em;
   width: 100%;
 }
 
+#location-submit-btn{
+  margin-left: 1em;
+}
+
 #location-input{
-  /*border-radius: .25em;*/
-  border: 1px solid #00628B;
+  border-radius: 5px;
+  height: 33px;
+  padding-left: 5px;
+  border: 1px solid #81A594;
   background-color: #E6E6DC;
 }
 .divisor{
@@ -31,7 +38,10 @@
 }
 
 #map {
+    opacity: 0.80;
+    filter: alpha(opacity=80); /* For IE8 and earlier*/
     position:relative;
+    border-radius: 8px;
     text-align: center;
     color: #00628B;
     height: 0;
