@@ -4,6 +4,7 @@
 // locate you.
 
 var pos;  // Initialize pos variable for external access
+var geoCompare;
 
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -24,6 +25,7 @@ function initMap() {
       // Display geolocated lat and lng in location input box and round to Yelp-friendly digits
       var formLocation = document.getElementById('location-input');
       formLocation.value = precise_round(pos.lat, 6) + ", " + precise_round(pos.lng, 6);
+      geoCompare = formLocation.value;
 
       infoWindow.setPosition(pos);
       infoWindow.setContent('You are here.');
