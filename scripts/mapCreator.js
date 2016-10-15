@@ -20,8 +20,11 @@ function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-				console.log(pos.lat);
-				console.log(pos.lng);
+
+      // Display geolocated lat and lng in location input box and round to Yelp-friendly digits
+      var formLocation = document.getElementById('location-input');
+      formLocation.value = precise_round(pos.lat, 6) + ", " + precise_round(pos.lng, 6);
+
       infoWindow.setPosition(pos);
       infoWindow.setContent('You are here.');
       map.setCenter(pos);
@@ -33,6 +36,9 @@ function initMap() {
     handleLocationError(false, infoWindow, map.getCenter());
   }
 }
+
+
+
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
