@@ -23,7 +23,7 @@
   getYelp.terms = 'food+trucks';
 
   getYelp.location = function() {
-    getYelp.locationSearchValue = $('#location').val();
+    getYelp.locationSearchValue = $('#location-input').val();
     return getYelp.locationSearchValue;
   };
   // getYelp.near = 'Portland,+OR';
