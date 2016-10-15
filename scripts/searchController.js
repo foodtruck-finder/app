@@ -3,9 +3,9 @@
   var searchController = {};
 
   searchController.index = function() {
-    $('.search').show();
     $('.home').hide();
     $('.top20').hide();
+    $('.search').delay(100).hide().slideDown(300);
     searchView.populateFilters();
     searchView.handleFilters();
 
