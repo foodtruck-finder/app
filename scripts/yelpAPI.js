@@ -109,12 +109,10 @@
     // var yelpSearchResults = [];
     // yelpSearchResults.push(localStorageDataJSON);
     getYelp.searchResultsQuery();
-    $('#search-results-container ul').append(
-      getYelp.foodTrucks.map(getYelp.render)
-    );
+    getYelp.foodTrucks[0].businesses.forEach(function(truck) {
+      $('#search-results-container ul').append(getYelp.render(truck));
+    });
   };
-
-
 
   module.getYelp = getYelp;
 
