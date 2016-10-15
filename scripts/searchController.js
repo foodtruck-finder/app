@@ -8,6 +8,7 @@
     $('.top20').hide();
     searchView.populateFilters();
     searchView.handleFilters();
+    searchView.formClick();
 
   };
 
