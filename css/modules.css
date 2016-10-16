@@ -1,5 +1,6 @@
 .navbar .container {
     display: block;
+    box-sizing: border-box;
 }
 
 .form-container {
