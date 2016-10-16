@@ -1,46 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>Your page title here :)</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>Food Truck Finder</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
+    <!-- FONTS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline|Roboto:400,400i" rel="stylesheet">
 
-  <!-- CSS
+    <!-- Emojis
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/modules.css">
+    <link rel="stylesheet" href="css/base.css">
+
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Handlebars template for search results
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+    <script id="searchResults-template" type="text/x-handlebars-template">
+      <li>
+        <a target="_blank" href="{{url}}">{{name}}</a>
+        <p>Rating: {{rating}} stars. {{review_count}} reviews.<br>
+        {{location.address}}</p>
+        <img src="{{image_url}}">
+      </li>
+    </script>
+
+
+    <!-- Handlebars template for top20 results
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <script id="top-20-template" type="text/x-handlebars-template">
+        <li>
+          <a target="_blank" href="{{url}}">{{name}}</a>
+          <p>Rating: {{rating}} stars. {{review_count}} reviews.</p>
+          <img src="{{image_url}}">
+        </li>
+    </script>
 
 </head>
+
 <body>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4>Basic Page</h4>
-        <p>This index.html page is a placeholder with the CSS, font and favicon. It's just waiting for you to add some content! If you need some help hit up the <a href="http://www.getskeleton.com">Skeleton documentation</a>.</p>
-      </div>
-    </div>
-  </div>
+    <!-- Header and Navigation
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <nav class="navbar container">
+        <div class="twelve columns">
+            <a href="/"><img class="one-third column" src="images/logo.svg" alt="Main Logo" /></a>
+            <ul class="navbar-list two-thirds column">
+                <li class="navbar-list-item"> <a class="navbar-list-link" href="/"><i class="em em-house"></i> Home</a> </li>
+                <li class="navbar-list-item"> <a class="navbar-list-link" href="/search"><i class="em em-mag_right"></i> Find|Results</a> </li>
+                <li class="navbar-list-item"> <a class="navbar-list-link" href="/top20"><i class="em em---1"></i> Top 20</a> </li>
+            </ul>
+            <form>
+                <div class="form-container">
+                    <div class="row">
+                            <label for="location"></label>
+                            <input type="location" placeholder="where are you?" id="location-input" size="30">
+                            <input id="location-submit-btn" class="button-primary" type="submit" value="Submit">
+                    </div>
+                </div>
+            </form>
 
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+        </div>
+    </nav>
+    <hr class="divisor">
+
+    <!-- Home Section
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section class="section home">
+        <div id="map">
+        </div>
+    </section>
+    <hr class="divisor">
+
+    <!-- Find | Results Section
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section class="section search">
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <h3 class="section-heading">Find | Results</h3>
+                    <p class="section-description">Your filtered search results will populate below.</p>
+                </div>
+            </div>
+
+            <!-- Form 2
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+            <div class="form-container">
+                <form>
+                    <div class="row">
+                        <!-- <div class="twelve columns"> -->
+                        <label><input type="checkbox" id="openNow" value="openNow"> Open now?</label>
+                        <ul id="filters">
+                            <div class="one-half column category">
+                                <img class="u-max-full-width" src="images/distance-icon.svg">
+                                <li>
+                                    <select id="distance-filter">
+                                  <option value="">-- Filter by Distance --</option>
+                                </select>
+                                </li>
+                            </div>
+                            <div class="one-half column category">
+                                <img class="u-max-full-width" src="images/cuisine-icon.svg">
+                                <li>
+                                    <select id="cuisine-filter">
+                                <option value="">-- Filter by Cuisine --</option>
+                              </select>
+                                </li>
+                            </div>
+                        </ul>
+                        <!-- </div> -->
+                    </div>
+                </form>
+
+            </div>
+
+          <!-- Search results populated by template
+          –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+          <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <section id="search-results-container">
+                      <ul id="search-results-list">
+                      </ul>
+                    </section>
+                </div>
+            </div>
+          </div>
+
+
+    </section>
+    <hr class="divisor">
+
+    <!-- Top 20 Section
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <section class="section top20">
+        <div class="container">
+            <div class="row">
+                <div class="twelve columns">
+                    <h3 class="section-heading">Top 20</h3>
+                      <p class="section-description">Top 20 results in your area</p>
+                        <ul id="top-twenty-list">
+                        </ul>
+                </div>
+            </div>
+
+            <label><input type="checkbox" id="openNowTop20" value="openNow"> Open now?</label>
+
+
+          </div>
+
+          <div id="main-image">
+            <div id="main-image:after">
+
+            </div>
+
+          </div>
+
+    </section>
+    <hr class="divisor">
+
+    <footer>
+        <div class="footer-container twelve columns">
+            <p>Copyright 2016 | <a href="https://github.com/foodtruck-finder">FoodTruck Finder Team</a></p>
+            <p>
+              <a  href="https://github.com/gnkatchmar"><i class="em em-pig2"></i> gnkatchmar • </a>
+              <a  href="https://github.com/elzed"><i class="em em-ramen"></i> elzed • </a>
+              <a  href="https://github.com/DrewStock"><i class="em em-beers"></i> DrewStock • </a>
+              <a  href="https://github.com/NathanPickard"><i class="em em-pizza"></i> NathanPickard • </a>
+              <a  href="https://github.com/m-art-inc"><i class="em em-hamburger"></i> m-art-inc</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- End Document -->
+    <script type="text/javascript" src="scripts/initMap.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE-4-HYH9Din8Tjjpa2Nwrvd6CfI4dFtA&callback=initMap"></script>
+    <script type="text/javascript" src="scripts/preciseRound.js"></script>
+    <script type="text/javascript" src="scripts/mapCreator.js"></script>
+
+    <script type="text/javascript" src="vendor/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="vendor/page.js"></script>
+    <script type="text/javascript" src="vendor/handlebars-v4.0.5.js"></script>
+
+    <script type="text/javascript" src="scripts/oauth.js"></script>
+    <script type="text/javascript" src="scripts/sha1.js"></script>
+    <script type="text/javascript" src="scripts/yelpAPI.js"></script>
+
+    <script type="text/javascript" src="scripts/homeController.js"></script>
+    <script type="text/javascript" src="scripts/searchController.js"></script>
+    <script type="text/javascript" src="scripts/topController.js"></script>
+    <script type="text/javascript" src="scripts/homeView.js"></script>
+    <script type="text/javascript" src="scripts/searchView.js"></script>
+    <script type="text/javascript" src="scripts/topView.js"></script>
+    <script type="text/javascript" src="scripts/routes.js"></script>
+
+
 </body>
+
 </html>

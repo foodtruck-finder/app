@@ -1,0 +1,35 @@
+/* HEADER & NAV STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.logo, img{
+  display: block;
+  margin: 0 auto;
+  margin-top: 1em;
+  min-width: 120px;
+  max-height: 120px;
+  padding: .5em;
+}
+
+a img:hover{
+  display: block;
+  margin-top: 1em;
+  min-width: 120px;
+  max-height: 120px;
+  padding: 1em;
+}
+
+
+
+.navbar-list{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  list-style: none;
+  font-size: 1em;
+}
+.navbar-list, ul, li{
+  display: inline-block;
+  padding-left: .5em;
+  vertical-align: middle;
+  margin-top: 1em;
+}

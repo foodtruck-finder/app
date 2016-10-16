@@ -1,0 +1,86 @@
+.navbar .container {
+    display: block;
+    box-sizing: border-box;
+}
+
+.form-container {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 1em;
+    width: 100%;
+    font-size: 11px;
+}
+
+#location-submit-btn {
+    margin-left: 1em;
+}
+
+#location-input {
+    border-radius: 5px;
+    height: 33px;
+    padding-left: 5px;
+    border: 1px solid #81A594;
+    background-color: #E6E6DC;
+}
+
+.divisor {
+    margin: 0;
+    background-color: #00628B;
+}
+
+#distance-filter {
+    color: #fff;
+    background-color: #00628B;
+    border: none;
+}
+
+#cuisine-filter {
+    color: #fff;
+    background-color: #00628B;
+    border: none;
+}
+
+#map {
+    opacity: 0.80;
+    filter: alpha(opacity=80);
+    /* For IE8 and earlier*/
+    position: relative;
+    border-radius: 8px;
+    text-align: center;
+    color: #00628B;
+    height: 0;
+    overflow: hidden;
+    text-transform: uppercase;
+    max-width: 70%;
+    min-height: 350px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, .4);
+}
+
+#search-results-list li {
+    margin: 2em;
+}
+
+#search-results-list a {
+    font-size: 1.25em;
+    font-weight: 900;
+}
+
+#search-results-list img {
+    border-radius: .5em;
+    font-weight: 900;
+}
+
+#top-twenty-list li {
+    margin: 2em;
+}
+
+#top-twenty-list a {
+    font-size: 1.25em;
+    font-weight: 900;
+}
+
+#top-twenty-list img {
+    border-radius: .5em;
+    font-weight: 900;
+}
