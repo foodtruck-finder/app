@@ -23,6 +23,7 @@
       getYelp.topTwentyAjaxCall().then(function() {
         console.log('Top 20 - AJAX call to YelpAPI completed');
         getYelp.topTwentyIndex();
+        // topController.index();
       });
     });
   };
