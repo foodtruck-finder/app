@@ -24,6 +24,8 @@
 
   getYelp.sort = 2;
 
+  getYelp.radius = 40000;
+
   // getYelp.limit = 10;
 
   getYelp.location = function() {
@@ -64,7 +66,7 @@
     // getYelp.parameters.push(['location', pos.lat, pos.lng]);
 
     if (getYelp.locationSearchValue === geoCompare) {
-      getYelp.parameters.push(['ll', pos.lat + ", " + pos.lng]);
+      getYelp.parameters.push(['ll', pos.lat + ', ' + pos.lng]);
     } else {
       getYelp.parameters.push(['location', getYelp.locationSearchValue]);
     }
@@ -92,8 +94,16 @@
     getYelp.location();
     getYelp.parameters = [];
     getYelp.parameters.push(['term', getYelp.terms]);
-    getYelp.parameters.push(['location', getYelp.locationSearchValue]);
+    // getYelp.parameters.push(['location', getYelp.locationSearchValue]);
+    if (getYelp.locationSearchValue === geoCompare) {
+      getYelp.parameters.push(['ll', pos.lat + ', ' + pos.lng]);
+    } else {
+      getYelp.parameters.push(['location', getYelp.locationSearchValue]);
+    }
+
+
     getYelp.parameters.push(['sort', getYelp.sort]);
+    getYelp.parameters.push(['radius_filter', getYelp.radius]);
     // getYelp.parameters.push(['limit', getYelp.limit]);
     getYelp.parameters.push(['callback', 'cb']);
     getYelp.parameters.push(['oauth_consumer_key', getYelp.auth.consumerKey]);
