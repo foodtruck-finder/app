@@ -17,3 +17,5 @@ git checkout working
 Load it up in your browser/editor to have a look! Keep in mind that the working branch is what we as a team are proposing to merge into master at some point in the future -- once we are sure it's stable. This should take some of the anxiety out of making/merging a pull request!
 
 Note: This is easy to do, but also easy to forget. When you submit a pull request just be sure that your 'base' branch dropdown is set to 'working' and not 'master'.--Jade Dhabolt
+
+* Updated Node version - D. Stock 9/25/17
